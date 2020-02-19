@@ -1,0 +1,25 @@
+[[plugins]]
+repo = 'bfrg/vim-cpp-modern'
+hook_add = '''
+    let g:cpp_simple_highlight = 1
+'''
+on_ft = ['c', 'cpp']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = '''
+    let g:go_fmt_command = "goimports"
+    let g:go_highlight_methods = 1
+    let g:go_highlight_functions = 1
+    let g:go_highlight_structs = 1
+    let g:go_highlight_extra_types = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_function_parameters = 0
+    let g:go_highlight_function_calls = 1
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_build_constraints = 1
+    let g:go_highlight_generate_tags = 1
+    let g:go_highlight_variable_assignments = 1
+'''
+on_ft = ['go']
