@@ -135,9 +135,9 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 nnoremap <C-j> }
 nnoremap <C-k> {
 "ターミナルを垂直で開く
-nnoremap <C-n> :vert term ++close<CR>
+nnoremap <silent><C-n>\ :vert term ++close<CR>
 "ターミナルを水平で開く
-nnoremap <C-n>- :bo term ++close
+nnoremap <C-n>- :bo term ++close<CR>
 " ターミナルを新しいタブページで開く
 nnoremap <C-t> :tab term ++close
 inoremap { {}<LEFT>
