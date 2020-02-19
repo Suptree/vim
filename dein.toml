@@ -27,15 +27,6 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
-hook_add = '''
-    
-'''
-#[[plugins]]
-#repo = 'bfrg/vim-cpp-modern'
-#hook_add = '''
-#    let g:cpp_simple_highlight = 1
-#    let g:cpp_named_requirements_highlight = 1
-#'''
 
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
@@ -43,7 +34,8 @@ hook_add = '''
     let c_no_curly_error=1   
 '''
 
-
+[[plugins]]
+repo = 'cespare/vim-toml'
 
 [[plugins]]
 repo = 'fatih/vim-go'
