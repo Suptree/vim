@@ -2,7 +2,7 @@
 
 ## vim Key binding
 
-|キー|Normal 動作|
+|キー|Normal|Insert|Visual|
 |:--|:--|
 |CTRL-@|前回のinsert modeで入力した内容を再度入力し、insert modeを抜ける|
 |CTRL-A|前回のinsert modeで入力した内容を再度入力|
