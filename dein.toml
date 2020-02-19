@@ -25,6 +25,11 @@ repo = 'prabirshrestha/asyncomplete.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    
+'''
 #[[plugins]]
 #repo = 'bfrg/vim-cpp-modern'
 #hook_add = '''

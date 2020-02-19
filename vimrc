@@ -127,15 +127,17 @@ set virtualedit=block
 
 " コマンドライン補完
 set wildmenu
+
+" Key bindの設定
 " 検索ハイライトの消去
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 " 段落の移動
 nnoremap <C-j> }
 nnoremap <C-k> {
 "ターミナルを垂直で開く
-nnoremap <C-\> :vert term ++close
+nnoremap <C-n> :vert term ++close<CR>
 "ターミナルを水平で開く
-nnoremap <C-_> :bo term ++close
+nnoremap <C-n>- :bo term ++close
 " ターミナルを新しいタブページで開く
 nnoremap <C-t> :tab term ++close
 inoremap { {}<LEFT>
@@ -148,8 +150,9 @@ vnoremap [ "zdi^V[<C-R>z]<ESC>
 vnoremap ( "zdi^V(<C-R>z)<ESC>
 vnoremap " "zdi^V"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
-"viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 set nocompatible
+
 "カーソルを行頭，行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 "BSで削除できるものを指定する
