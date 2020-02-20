@@ -79,7 +79,7 @@ set number
 
 " 相対的な行番号
 "set relativenumber
-
+set helplang=ja,en
 " 検索結果をハイライトする
 set hlsearch
 
@@ -135,24 +135,14 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 nnoremap <C-j> }
 nnoremap <C-k> {
 "ターミナルを垂直で開く
-nnoremap <silent><C-n>\ :vert term ++close<CR>
+nnoremap <C-n>\ :vert term ++close 
 "ターミナルを水平で開く
 nnoremap <C-n>- :bo term ++close<CR>
 " ターミナルを新しいタブページで開く
 nnoremap <C-t> :tab term ++close
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-vnoremap { "zdi^V{<C-R>z}<ESC>
-vnoremap [ "zdi^V[<C-R>z]<ESC>
-vnoremap ( "zdi^V(<C-R>z)<ESC>
-vnoremap " "zdi^V"<C-R>z^V"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+inoremap <C-[> <ESC>
 set nocompatible
-
 "カーソルを行頭，行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
 "BSで削除できるものを指定する

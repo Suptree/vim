@@ -2,6 +2,9 @@
 repo = 'joshdick/onedark.vim'
 
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
@@ -27,6 +30,9 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
 
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
