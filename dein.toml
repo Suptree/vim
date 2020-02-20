@@ -35,10 +35,21 @@ repo = 'scrooloose/nerdtree'
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
 hook_add = '''
     let c_no_curly_error=1   
 '''
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -61,4 +72,6 @@ hook_add = '''
     let g:go_highlight_variable_assignments = 1
     let g:go_template_autocreate = 0
 '''
-
+[[plugins]]
+repo = 'tyru/caw.vim.git'
+on_event = 'InsertEnter' # ←こうなる（インサートモードに入ったら読み込む）

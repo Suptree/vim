@@ -46,7 +46,6 @@ if len(s:removed_plugins) > 0
     call dein#recache_runtimepath()
 endif
 " }}}
-
 " }}}
 " カラー
 colorscheme onedark
@@ -127,6 +126,10 @@ set virtualedit=block
 
 " コマンドライン補完
 set wildmenu
+" 開いたときにカレンとディレクトリ
+set autochdir
+  " set autochdir
+" autocmd BufEnter * execute 'silent! lcd '.expand('%:h')
 
 " Key bindの設定
 " 検索ハイライトの消去
@@ -143,7 +146,48 @@ nnoremap <C-t> :tab term ++close
 " 画面分割しlazygitを開く
 nnoremap <silent><C-n>g :vert term ++close lazygit<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap ; :
 inoremap <C-[> <ESC>
+" 画面増やすためのキーバインド
+nnoremap s <Nop>
+nnoremap ss :split<CR>
+nnoremap sv :vsplit<CR>
+nnoremap sh <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+
+nnoremap sH <C-w>H
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+
+nnoremap sw <C-w>w
+nnoremap sr <C-w>r
+
+nnoremap sq :q<CR>
+nnoremap sQ :bd<CR>
+
+nnoremap st :tabnew<CR>
+nnoremap sn gt
+nnoremap sp gT
+" nnoremap sl <C-w>l
+"nnoremap sl <C-w>l
+"nnoremap sl <C-w>l
+
+" 行の最初の文字の前にコメント文字をトグル
+nmap <Leader>c <Plug>(caw:hatpos:toggle)
+vmap <Leader>c <Plug>(caw:hatpos:toggle)
+" 行頭にコメントをトグル
+nmap <Leader>, <Plug>(caw:zeropos:toggle)
+vmap <Leader>, <Plug>(caw:zeropos:toggle)
+
+
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 set nocompatible
 "カーソルを行頭，行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
@@ -189,4 +233,7 @@ function! s:get_syn_info()
         \ " guifg: " . linkedSyn.guifg .
         \ " guibg: " . linkedSyn.guibg
 endfunction
+
 command! SyntaxInfo call s:get_syn_info()
+
+let g:python3_host_prog = expand('/Users/Daiki/opt/anaconda3/bin/python')
