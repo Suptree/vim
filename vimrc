@@ -137,9 +137,11 @@ nnoremap <C-k> {
 "ターミナルを垂直で開く
 nnoremap <C-n>\ :vert term ++close 
 "ターミナルを水平で開く
-nnoremap <C-n>- :bo term ++close<CR>
+nnoremap <C-n>- :bo term ++close 
 " ターミナルを新しいタブページで開く
 nnoremap <C-t> :tab term ++close
+" 画面分割しlazygitを開く
+nnoremap <silent><C-n>g :vert term ++close lazygit<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 inoremap <C-[> <ESC>
 set nocompatible
