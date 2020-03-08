@@ -176,11 +176,6 @@ nnoremap sQ :bd<CR>
 nnoremap st :tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
-" LSP キーバインド
-nnoremap f <Nop>
-nnoremap ff :LspDocumentFormat<CR>
-nnoremap fi :LspCodeAction source.organizeImports<CR>
-nnoremap fh :LspHover<CR>
 
 " nnoremap sl <C-w>l
 "nnoremap sl <C-w>l
@@ -197,6 +192,14 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
+
+" 補完表示時のEnterで改行をしない
+" inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+"
+" set completeopt=menuone,noinsert
+" inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+" inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+
 " call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 " call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
 " call submode#map('bufmove', 'n', '', '>', '<C-w>>')
@@ -261,3 +264,5 @@ endfunction
 autocmd BufNewFile ~/Atcoder/*.cpp :0r ~/.vim/templates/atcoder.cpp
 autocmd BufNewFile  ~/Atcoder/*.cpp call MakeCquery()
 autocmd BufReadPre ~/Atcoder/*.cpp call MakeCquery()
+
+
