@@ -258,3 +258,6 @@ function MakeCquery()
   echo system('echo ''[{"directory": "/Users/Daiki/Atcoder","command": "/usr/bin/c++  ' . temp . ' -std=c++11 -I/usr/local/include -I/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include","file": "' . temp . '"}]'' > compile_commands.json')
 endfunction
 
+autocmd BufNewFile ~/Atcoder/*.cpp :0r ~/.vim/templates/atcoder.cpp
+autocmd BufNewFile  ~/Atcoder/*.cpp call MakeCquery()
+autocmd BufReadPre ~/Atcoder/*.cpp call MakeCquery()
