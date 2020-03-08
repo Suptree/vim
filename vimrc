@@ -131,6 +131,10 @@ set autochdir
   " set autochdir
 " autocmd BufEnter * execute 'silent! lcd '.expand('%:h')
 
+" autocmd BufWritePre <buffer>
+"               \ call execute('LspCodeActionSync source.organizeImports')
+" autocmd BufWritePre <buffer>
+"               \ call execute('LspDocumentFormat')
 " Key bindの設定
 " 検索ハイライトの消去
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
@@ -150,7 +154,7 @@ nnoremap ; :
 inoremap <C-[> <ESC>
 " 画面増やすためのキーバインド
 nnoremap s <Nop>
-nnoremap ss :split<CR>
+" nnoremap ss :split<CR>
 nnoremap sv :vsplit<CR>
 nnoremap sh <C-w>h
 nnoremap sj <C-w>j
@@ -171,10 +175,15 @@ nnoremap sQ :bd<CR>
 nnoremap st :tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
+" LSP キーバインド
+nnoremap f <Nop>
+nnoremap ff :LspDocumentFormat<CR>
+nnoremap fi :LspCodeAction source.organizeImports<CR>
+nnoremap fh :LspHover<CR>
+
 " nnoremap sl <C-w>l
 "nnoremap sl <C-w>l
 "nnoremap sl <C-w>l
-
 " 行の最初の文字の前にコメント文字をトグル
 nmap <Leader>c <Plug>(caw:hatpos:toggle)
 vmap <Leader>c <Plug>(caw:hatpos:toggle)
@@ -187,7 +196,10 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-
+" call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+" call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+" call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+" call submode#map('bufmove', 'n', '', '<', '<C-w><')
 set nocompatible
 "カーソルを行頭，行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
@@ -235,5 +247,13 @@ function! s:get_syn_info()
 endfunction
 
 command! SyntaxInfo call s:get_syn_info()
+let g:python_host_prog = expand('/usr/bin/python')
+let g:python3_host_prog = expand('/usr/local/Cellar/python/3.7.6_1/bin/python3.7')
 
-let g:python3_host_prog = expand('/Users/Daiki/opt/anaconda3/bin/python')
+
+"競プロ
+function MakeCquery()
+  let temp = expand('%:p')
+  echo system('echo ''[{"directory": "/Users/Daiki/Atcoder","command": "/usr/bin/c++  ' . temp . ' -std=c++11","file": "' . temp . '"}]'' > compile_commands.json')
+endfunction
+

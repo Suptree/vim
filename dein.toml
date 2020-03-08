@@ -1,9 +1,14 @@
+# エディタカラー
 [[plugins]]
 repo = 'joshdick/onedark.vim'
 
+
+# vimのドキュメントを日本語にしてくれる
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
+
+# air line　をカッコ良くしてくれる
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 
@@ -13,9 +18,13 @@ repo = 'vim-airline/vim-airline-themes'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+
+# vimの補完機能
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
-
+hook_add = '''
+    let g:lsp_diagnostics_echo_cursor = 1
+'''
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
 
@@ -28,8 +37,11 @@ repo = 'prabirshrestha/asyncomplete.vim'
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
+
+# ディレクトリツリーを表示
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -42,6 +54,7 @@ repo = 'octol/vim-cpp-enhanced-highlight'
 hook_add = '''
     let c_no_curly_error=1   
 '''
+
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
@@ -52,26 +65,57 @@ repo = 'Shougo/neomru.vim'
 repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
-repo = 'cespare/vim-toml'
+repo = 'roxma/nvim-yarp'
 
 [[plugins]]
-repo = 'fatih/vim-go'
-hook_add = '''
-    let g:go_fmt_command = "goimports"
-    let g:go_highlight_methods = 1
-    let g:go_highlight_functions = 1
-    let g:go_highlight_structs = 1
-    let g:go_highlight_extra_types = 1
-    let g:go_highlight_operators = 1
-    let g:go_highlight_function_parameters = 0
-    let g:go_highlight_function_calls = 1
-    let g:go_highlight_types = 1
-    let g:go_highlight_fields = 1
-    let g:go_highlight_build_constraints = 1
-    let g:go_highlight_generate_tags = 1
-    let g:go_highlight_variable_assignments = 1
-    let g:go_template_autocreate = 0
-'''
+repo = 'roxma/vim-hug-neovim-rpc'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+
+# [[plugins]]
+# repo = 'kana/vim-submode'
+
+# Goのvimプラグイン
+# [[plugins]]
+# repo = 'fatih/vim-go'
+# hook_add = '''
+#     let g:go_fmt_command = "goimports"
+#     let g:go_highlight_methods = 1
+#     let g:go_highlight_functions = 1
+#     let g:go_highlight_structs = 1
+#     let g:go_highlight_extra_types = 1
+#     let g:go_highlight_operators = 1
+#     let g:go_highlight_function_parameters = 0
+#     let g:go_highlight_function_calls = 1
+#     let g:go_highlight_types = 1
+#     let g:go_highlight_fields = 1
+#     let g:go_highlight_build_constraints = 1
+#     let g:go_highlight_generate_tags = 1
+#     let g:go_highlight_variable_assignments = 1
+#     let g:go_template_autocreate = 0
+# '''
+# [[plugins]]
+# repo = 'mattn/vim-goimports'
+
+
 [[plugins]]
 repo = 'tyru/caw.vim.git'
 on_event = 'InsertEnter' # ←こうなる（インサートモードに入ったら読み込む）
+
+# [[plugins]]
+# repo = 'w0rp/ale'
+# hook = '''
+#     let g:ale_fix_on_save = 1
+# '''
+
+# C++の補完
+[[plugins]]
+repo='pdavydov108/vim-lsp-cquery'
+hook_add='''
+autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fv :LspCqueryDerived<CR>
+autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fc :LspCqueryCallers<CR>
+autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fb :LspCqueryBase<CR>
+autocmd FileType c,cc,cpp,cxx,h,hpp nnoremap <leader>fi :LspCqueryVars<CR>
+'''
