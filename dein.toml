@@ -4,8 +4,8 @@ repo = 'joshdick/onedark.vim'
 
 
 # vimのドキュメントを日本語にしてくれる
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
+# [[plugins]]
+# repo = 'vim-jp/vimdoc-ja'
 
 
 # air line　をカッコ良くしてくれる
@@ -15,9 +15,9 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
+# vim上でGitを使用するコマンド
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
 
 # vimの補完機能
 [[plugins]]
@@ -42,13 +42,15 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-
+# カッコ補完
 [[plugins]]
 repo = 'cohama/lexima.vim'
 
+# ファイルの曖昧検索
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 
+# C++のハイライトsyntax
 [[plugins]]
 repo = 'octol/vim-cpp-enhanced-highlight'
 hook_add = '''
@@ -98,6 +100,9 @@ repo = 'cespare/vim-toml'
 # '''
 # [[plugins]]
 # repo = 'mattn/vim-goimports'
+# hook_add='''
+# let g:goimports = 1
+# '''
 
 
 [[plugins]]

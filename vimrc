@@ -131,10 +131,11 @@ set autochdir
   " set autochdir
 " autocmd BufEnter * execute 'silent! lcd '.expand('%:h')
 
-" autocmd BufWritePre <buffer>
-"               \ call execute('LspCodeActionSync source.organizeImports')
-" autocmd BufWritePre <buffer>
-"               \ call execute('LspDocumentFormat')
+" Go で :w　を実行したときに importとfmtを自動でしてくれるようにした
+autocmd BufWritePre *.go
+              \ call execute('LspCodeActionSync source.organizeImports')
+autocmd BufWritePre *.go
+             \ call execute('LspDocumentFormat')
 " Key bindの設定
 " 検索ハイライトの消去
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
@@ -254,6 +255,6 @@ let g:python3_host_prog = expand('/usr/local/Cellar/python/3.7.6_1/bin/python3.7
 "競プロ
 function MakeCquery()
   let temp = expand('%:p')
-  echo system('echo ''[{"directory": "/Users/Daiki/Atcoder","command": "/usr/bin/c++  ' . temp . ' -std=c++11","file": "' . temp . '"}]'' > compile_commands.json')
+  echo system('echo ''[{"directory": "/Users/Daiki/Atcoder","command": "/usr/bin/c++  ' . temp . ' -std=c++11 -I/usr/local/include -I/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include -I/Library/Developer/CommandLineTools/usr/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include","file": "' . temp . '"}]'' > compile_commands.json')
 endfunction
 
