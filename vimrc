@@ -115,7 +115,10 @@ set shiftwidth=4
 " タブページ
 set showtabline=2
 
+"
+"
 "ステータスライン
+" set showmatch
 set laststatus=2
 
 "クリップボードコピー
