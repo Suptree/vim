@@ -131,8 +131,8 @@ set virtualedit=block
 set wildmenu
 " 開いたときにカレンとディレクトリ
 set autochdir
-  " set autochdir
-" autocmd BufEnter * execute 'silent! lcd '.expand('%:h')
+
+set mouse=a
 
 " Go で :w　を実行したときに importとfmtを自動でしてくれるようにした
 autocmd BufWritePre *.go
@@ -145,6 +145,9 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 " 段落の移動
 nnoremap <C-j> }
 nnoremap <C-k> {
+nnoremap <C-h> b
+nnoremap <C-l> w
+
 "ターミナルを垂直で開く
 nnoremap <C-n>\ :vert term ++close 
 "ターミナルを水平で開く
