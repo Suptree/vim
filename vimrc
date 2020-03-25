@@ -1,4 +1,4 @@
-" dein.vim settings {{{
+:" dein.vim settings {{{
 " install dir {{{
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -105,7 +105,6 @@ set tabstop=4
 
 " タブをスペースに展開
 set expandtab
-
 " インデントを考慮して改行
 set smartindent
 
@@ -115,10 +114,10 @@ set shiftwidth=4
 " タブページ
 set showtabline=2
 
-"
+" set scrolloff=2
 "
 "ステータスライン
-" set showmatch
+set showmatch
 set laststatus=2
 
 "クリップボードコピー
@@ -132,7 +131,7 @@ set wildmenu
 " 開いたときにカレンとディレクトリ
 set autochdir
 
-set mouse=a
+" set mouse=a
 
 " Go で :w　を実行したときに importとfmtを自動でしてくれるようにした
 autocmd BufWritePre *.go
@@ -158,7 +157,11 @@ nnoremap <C-t> :tab term ++close
 nnoremap <silent><C-n>g :vert term ++close lazygit<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap ; :
-inoremap <C-[> <ESC>
+" inoremap jk <ESC>
+
+"同じ行でも下をj k を押したら一つ下にいく
+nnoremap j gj
+nnoremap k gk
 " 画面増やすためのキーバインド
 nnoremap s <Nop>
 " nnoremap ss :split<CR>
@@ -193,12 +196,12 @@ vmap <Leader>c <Plug>(caw:hatpos:toggle)
 nmap <Leader>, <Plug>(caw:zeropos:toggle)
 vmap <Leader>, <Plug>(caw:zeropos:toggle)
 
-
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
+nnoremap <C-i> A
+" inoremap <C-j> <Down>
+" inoremap <C-k> <Up>
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
+"
 " 補完表示時のEnterで改行をしない
 " inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 "
